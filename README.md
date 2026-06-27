@@ -1,14 +1,19 @@
-# ExpTracker
+# ExpTracker 💸
 
-A personal expense tracker built with React, Express, and MongoDB. Track your daily spending, organize by category, and get a clear monthly breakdown on a dashboard.
+A premium, dark-themed personal expense tracker built with React, Express, and MongoDB. Track your daily spending, organize by category, and get a clear monthly breakdown on a beautifully designed dashboard.
 
-## What this app does
+![Dashboard Preview](assets/dashboard.png)
 
-- Register and log in with a personal account
-- Add, edit, and delete expenses (title, amount, category, date)
-- Categories: Food, Transport, Bills, Shopping, Other
-- Dashboard showing total spent this month and a breakdown by category
-- Filter expenses by month or category
+## Features
+
+- **Secure Authentication**: Register and log in securely with JWT-based sessions.
+- **Expense Management**: Add, edit, and delete expenses (title, amount, category, date).
+- **Categorization**: Group spending into categories (Food, Transport, Bills, Shopping, Other) with distinct color coding.
+- **Smart Dashboard**: Instantly see your total monthly spend and a visual percentage breakdown across categories, plus a quick view of your most recent expenses.
+- **Filtering**: Easily filter your expenses list by month or specific category.
+- **Premium UI**: Built with a custom dark-mode design system, featuring glassmorphism, smooth animations, and toast notifications.
+
+![Expenses Preview](assets/expenses.png)
 
 ## Project Structure
 
@@ -28,7 +33,7 @@ ExpTracker/
 ### 1. Clone and install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Kashyap-2005/ExpTracker.git
 cd ExpTracker
 
 # Install backend dependencies
@@ -42,64 +47,44 @@ npm install
 
 ### 2. Configure environment variables
 
-Inside `server/`, create a `.env` file based on `.env.example`:
+Inside the `server/` directory, create a `.env` file based on `.env.example`:
 
-```
+```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/exptracker
-JWT_SECRET=pick_a_strong_random_string
+# Replace with your actual MongoDB connection string
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>/exptracker?retryWrites=true&w=majority&appName=ExpTracker
+# Use a strong, random secret key for JWT signing
+JWT_SECRET=your_super_secret_key_here
 ```
-
-If you are using MongoDB Atlas, replace `MONGO_URI` with your Atlas connection string.
 
 ### 3. Run the app
 
 Open two terminals:
 
 ```bash
-# Terminal 1 — backend
+# Terminal 1 — Start the backend server
 cd server
 npm run dev
 
-# Terminal 2 — frontend
+# Terminal 2 — Start the React frontend
 cd client
 npm run dev
 ```
 
-The backend runs on `http://localhost:5000`  
-The frontend runs on `http://localhost:5173`
-
-## API Overview
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /api/auth/register | Create a new account |
-| POST | /api/auth/login | Log in, receive JWT |
-| GET | /api/expenses | List your expenses |
-| POST | /api/expenses | Add an expense |
-| PUT | /api/expenses/:id | Edit an expense |
-| DELETE | /api/expenses/:id | Delete an expense |
+- The backend API runs on `http://localhost:5000`  
+- The frontend app runs on `http://localhost:5173`
 
 ## Tech Stack
 
-| Part | Technology |
+| Layer | Technology |
 |------|-----------|
-| Frontend | React 18, Vite, React Router v6 |
-| Styling | Vanilla CSS |
-| HTTP | Axios |
-| Backend | Express.js |
-| Database | MongoDB, Mongoose |
-| Auth | bcryptjs, jsonwebtoken |
-
-## Development Notes
-
-This project is being built in phases:
-
-- **Phase 1** — Project structure, schemas, server skeleton, React routing skeleton ✅
-- **Phase 2** — Auth (register, login, JWT, protected routes) ✅
-- **Phase 3** — Expense CRUD endpoints and UI ✅
-- **Phase 4** — Dashboard analytics ✅
-- **Phase 5** — Filters, validation, polish ✅
+| **Frontend** | React 18, Vite, React Router v6 |
+| **Styling** | Custom Vanilla CSS (Design Tokens, CSS Variables) |
+| **HTTP Client** | Axios (with interceptors) |
+| **Notifications** | react-hot-toast |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB, Mongoose |
+| **Authentication**| bcryptjs, jsonwebtoken |
 
 ## License
 
