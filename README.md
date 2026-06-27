@@ -23,57 +23,6 @@ ExpTracker/
 └── server/         Express backend + MongoDB
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js v18+
-- MongoDB (local install or a free Atlas cluster)
-
-### 1. Clone and install
-
-```bash
-git clone https://github.com/Kashyap-2005/ExpTracker.git
-cd ExpTracker
-
-# Install backend dependencies
-cd server
-npm install
-
-# Install frontend dependencies
-cd ../client
-npm install
-```
-
-### 2. Configure environment variables
-
-Inside the `server/` directory, create a `.env` file based on `.env.example`:
-
-```env
-PORT=5000
-# Replace with your actual MongoDB connection string
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster>/exptracker?retryWrites=true&w=majority&appName=ExpTracker
-# Use a strong, random secret key for JWT signing
-JWT_SECRET=your_super_secret_key_here
-```
-
-### 3. Run the app
-
-Open two terminals:
-
-```bash
-# Terminal 1 — Start the backend server
-cd server
-npm run dev
-
-# Terminal 2 — Start the React frontend
-cd client
-npm run dev
-```
-
-- The backend API runs on `http://localhost:5000`  
-- The frontend app runs on `http://localhost:5173`
-
 ## Tech Stack
 
 | Layer | Technology |
